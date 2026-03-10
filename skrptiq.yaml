@@ -1,0 +1,36 @@
+name: "feature-spec-pipeline"
+display_name: "Feature Spec Pipeline"
+description: "Generate detailed feature specifications from rough ideas, including user stories, acceptance criteria, and edge cases"
+version: "1.0.0"
+engine: ">=1.0.0"
+
+author:
+  name: "skrptiq"
+  url: "https://hub.skrptiq.ai"
+licence: "MIT"
+repository: "https://github.com/skrpts/feature-spec-pipeline"
+
+category: "product-manager"
+tags:
+  - "feature-specification"
+  - "user-stories"
+  - "acceptance-criteria"
+  - "product-management"
+  - "requirements"
+
+requires:
+  services:
+    - "anthropic-claude"
+  permissions: []
+  data_handling:
+    - "product-requirements"
+
+contents:
+  skills: 3
+  prompts: 5
+  workflows: 1
+  services: 1
+  sources: 1
+  documents: 1
+  assets: 1
+  total: 13
