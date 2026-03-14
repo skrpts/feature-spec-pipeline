@@ -21,7 +21,7 @@ connections:
     type: uses
   - target: feature-spec-assembler
     type: uses
-  - target: claude-service
+  - target: llm-service
     type: runs_on
   - target: feature-spec-standards
     type: references
@@ -100,3 +100,42 @@ This workflow transforms a rough feature idea into a comprehensive, implementati
 - **Component explosion:** If decomposition yields more than 12 components, suggest splitting into multiple feature specs.
 - **Circular dependencies:** If the dependency map reveals circular references between components, flag them for architectural review.
 - **Missing context:** If any stage cannot produce meaningful output due to missing domain knowledge, pause and request clarification rather than generating speculative content.
+
+## Inputs
+
+| Name | Required | Description | Example |
+|------|----------|-------------|---------|
+| `{{input.feature_idea}}` | Yes | The rough feature idea or feature request you want to turn into a specification | `Offline mode for field users who lose connectivity in warehouses` |
+| `{{input.business_context}}` | No | Any business, customer, or platform context that should shape the specification | `Enterprise prospects cite offline support as a deal-breaker` |
+| `{{input.constraints}}` | No | Known technical or policy constraints | `Must work with the existing sync architecture` |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| A complete feature specification document ready for engineering handoff | A complete feature specification document ready for engineering handoff |
+
+## Setup
+
+Before running this workflow:
+
+1. No external services required — paste your content directly and provide any supporting context as inputs or source nodes.
+2. Review the included documents, assets, or source nodes and customise them to match your team, brand, or domain conventions where needed.
+3. No specific AI provider or API key is required beyond your configured skrptiq LLM provider.
+
+## Provider Notes
+
+- The longer synthesis stages benefit from a model with strong reasoning and a generous context window.
+- Extraction, classification, and formatting steps generally run well on smaller or faster models.
+- Because there are no vendor-specific integrations here, provider choice is mostly a trade-off between speed, quality, and cost.
+
+## Example Input
+
+To test this workflow immediately after import:
+
+```
+Feature Idea: "Offline mode for field users who lose connectivity in warehouses"
+Business Context: "Enterprise prospects cite offline support as a deal-breaker"
+Constraints: "Must work with the existing sync architecture"
+```
+

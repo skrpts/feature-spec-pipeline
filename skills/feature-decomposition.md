@@ -5,7 +5,7 @@ title: Feature Decomposition
 description: "Breaking down high-level features into implementable components with clear boundaries and dependencies"
 tags: [Production, Tested]
 connections:
-  - target: claude-service
+  - target: llm-service
     type: runs_on
   - target: feature-spec-standards
     type: references

@@ -5,7 +5,7 @@ title: Acceptance Criteria Writing
 description: "Writing precise, testable acceptance criteria in Given/When/Then format with measurable outcomes"
 tags: [Production, Tested]
 connections:
-  - target: claude-service
+  - target: llm-service
     type: runs_on
   - target: feature-spec-standards
     type: references

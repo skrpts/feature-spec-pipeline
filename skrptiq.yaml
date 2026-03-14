@@ -19,8 +19,7 @@ tags:
   - "requirements"
 
 requires:
-  services:
-    - "anthropic-claude"
+  services: []
   permissions: []
   data_handling:
     - "product-requirements"

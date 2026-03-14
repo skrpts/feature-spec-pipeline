@@ -5,7 +5,7 @@ title: Edge Case Analysis
 description: "Identifying edge cases, failure modes, and boundary conditions through systematic analysis across six dimensions"
 tags: [Production, Tested]
 connections:
-  - target: claude-service
+  - target: llm-service
     type: runs_on
   - target: feature-spec-standards
     type: references
