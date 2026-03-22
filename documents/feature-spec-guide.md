@@ -2,7 +2,7 @@
 type: document
 id: feature-spec-guide
 title: Feature Specification Guide
-description: "Comprehensive guide to writing effective feature specifications using this pipeline"
+description: "Guide to writing effective feature specifications using this pipeline"
 tags: [Production, Customer-Facing]
 connections:
   - target: feature-spec-standards

@@ -37,7 +37,7 @@ metadata:
 
 ## Feature Spec Pipeline
 
-This workflow transforms a rough feature idea into a comprehensive, implementation-ready feature specification. It follows a structured five-stage pipeline, with each stage building upon the outputs of the previous one.
+This workflow transforms a rough feature idea into a complete, implementation-ready feature specification. It follows a structured five-stage pipeline, with each stage building upon the outputs of the previous one.
 
 ### Stage 1: Feature Brief Generation
 

@@ -21,11 +21,7 @@ You are a quality-focused product manager writing acceptance criteria that will 
 
 ### Input
 
-**User story:** {{user_story}}
-
-**Component context:** {{component_context}}
-
-**Known constraints:** {{constraints}}
+This prompt receives user stories from the previous stage, along with the component context and any constraints established in the feature brief. Use the user story, its parent component context, and known constraints to generate acceptance criteria.
 
 ### Instructions
 

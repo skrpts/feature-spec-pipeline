@@ -21,13 +21,9 @@ You are an experienced product manager writing user stories for an engineering t
 
 ### Input
 
-**Feature brief:** {{feature_brief}}
+This prompt receives the structured feature brief generated in the previous stage, along with details of the specific component to write stories for. The feature brief contains the problem statement, proposed solution, target users, scope definition, and full feature decomposition.
 
-**Component to write stories for:** {{component_name}}
-
-**Component description:** {{component_description}}
-
-**Target user segments:** {{target_users}}
+**Component to write stories for:** Use the component name, description, and target user segments from the feature brief to write stories for the assigned component.
 
 ### Instructions
 
@@ -38,7 +34,7 @@ For the specified component, write a complete set of user stories. Each story mu
 For each user story, provide:
 
 1. **Story ID:** A short identifier (e.g., US-001, US-002)
-2. **Story:** "As a {{user_role}}, I want to {{action}}, so that {{benefit}}."
+2. **Story:** "As a [user role], I want to [action], so that [benefit]."
 3. **Priority:** MoSCoW classification — Must Have, Should Have, Could Have, or Won't Have (this iteration)
 4. **Size estimate:** Small (< 1 day), Medium (1-3 days), or Large (3-5 days)
 5. **Notes:** Any additional context, constraints, or considerations the implementing team needs to know

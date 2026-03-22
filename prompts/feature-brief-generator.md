@@ -21,15 +21,15 @@ You are a senior product manager with deep experience in feature specification a
 
 ### Input
 
-**Feature idea:** {{feature_idea}}
+**Feature idea:** {{input.feature_idea}}
 
-**Product context:** {{product_context}}
+**Business context:** {{input.business_context}}
 
-**Target users:** {{target_users}}
+**Constraints:** {{input.constraints}}
 
 ### Instructions
 
-Analyse the feature idea provided above and produce a structured feature brief. Work through the following sections methodically.
+Analyse the feature idea, business context, and constraints provided above and produce a structured feature brief. Work through the following sections methodically.
 
 **1. Problem Statement**
 
@@ -41,7 +41,7 @@ Describe the proposed solution in 3-5 sentences. Explain what the feature does a
 
 **3. Target Users**
 
-Based on the product context and target users provided, identify the primary and secondary user segments for this feature. For each segment, note:
+Based on the business context and feature idea provided, identify the primary and secondary user segments for this feature. For each segment, note:
 - Who they are (role, experience level)
 - Why this feature matters to them specifically
 - How frequently they would use it

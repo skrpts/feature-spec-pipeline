@@ -17,7 +17,7 @@ metadata:
 
 ## Edge Case Analysis
 
-This skill systematically identifies edge cases, failure modes, and boundary conditions that are routinely missed during feature specification. It operates across six analysis dimensions to ensure comprehensive coverage.
+This skill systematically identifies edge cases, failure modes, and boundary conditions that are routinely missed during feature specification. It operates across six analysis dimensions to ensure thorough coverage.
 
 ### Core Capability
 
