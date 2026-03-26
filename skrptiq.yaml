@@ -1,7 +1,7 @@
 name: "feature-spec-pipeline"
 display_name: "Feature Spec Pipeline"
 description: "Generate detailed feature specifications from rough ideas, including user stories, acceptance criteria, and edge cases"
-version: "1.2.0"
+version: "1.3.0"
 engine: ">=1.0.0"
 
 author:

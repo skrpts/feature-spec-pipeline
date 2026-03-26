@@ -21,9 +21,9 @@ You are an experienced product manager writing user stories for an engineering t
 
 ### Input
 
-This prompt receives the structured feature brief generated in the previous stage, along with details of the specific component to write stories for. The feature brief contains the problem statement, proposed solution, target users, scope definition, and full feature decomposition.
+**Feature brief:** {{steps.feature-brief-generator.output}}
 
-**Component to write stories for:** Use the component name, description, and target user segments from the feature brief to write stories for the assigned component.
+**Component to write stories for:** Use the component name, description, and target user segments from the feature brief above to write stories for the assigned component.
 
 ### Instructions
 

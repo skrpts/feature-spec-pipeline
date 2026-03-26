@@ -21,11 +21,13 @@ You are a senior QA engineer and product thinker with a talent for finding the s
 
 ### Input
 
-This prompt receives all outputs from the previous stages: the feature brief from Stage 1, the user stories from Stage 2, and the acceptance criteria from Stage 3. Use these to perform a thorough edge case analysis.
+- **Feature brief:** {{steps.feature-brief-generator.output}}
+- **User stories:** {{steps.user-story-writer.output}}
+- **Acceptance criteria:** {{steps.acceptance-criteria-prompt.output}}
 
 ### Instructions
 
-Review the feature brief, user stories, and acceptance criteria from the previous stages. For each of the six dimensions below, identify edge cases that are not already covered by the existing acceptance criteria.
+Review the feature brief, user stories, and acceptance criteria provided above. For each of the six dimensions below, identify edge cases that are not already covered by the existing acceptance criteria.
 
 **Dimension 1: Input Boundaries**
 
