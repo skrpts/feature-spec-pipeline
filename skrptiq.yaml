@@ -19,9 +19,11 @@ tags:
   - "requirements"
 
 requires:
-  services: []
+  services:
+    - "llm-service"
   permissions: []
   data_handling:
+    - "pii"
     - "product-requirements"
 
 contents:
