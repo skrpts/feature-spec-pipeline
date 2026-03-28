@@ -19,11 +19,19 @@ connections:
     type: uses
   - target: edge-case-finder
     type: uses
+  - target: stakeholder-analysis
+    type: uses
+  - target: risk-assessment
+    type: uses
   - target: feature-spec-assembler
+    type: uses
+  - target: risk-assessment-prompt
     type: uses
   - target: llm-service
     type: runs_on
   - target: feature-spec-standards
+    type: references
+  - target: product-strategy-guide
     type: references
   - target: feature-spec-guide
     type: references
