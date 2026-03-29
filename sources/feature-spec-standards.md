@@ -3,7 +3,7 @@ type: source
 id: feature-spec-standards
 title: Feature Specification Standards
 description: "Reference standards and industry best practices for feature specification writing"
-tags: [Production, planning:product, design:product]
+tags: [Production, Planning, Writing]
 connections: []
 metadata:
   source_type: "reference"

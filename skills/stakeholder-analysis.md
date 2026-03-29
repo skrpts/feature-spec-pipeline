@@ -3,7 +3,7 @@ type: skill
 id: stakeholder-analysis
 title: Stakeholder Analysis
 description: "Identifying stakeholders, their needs, influence levels, and impact on product decisions"
-tags: [Production, Tested, analysis:audience, planning:product, design:product]
+tags: [Production, Tested, Audience, Planning]
 connections:
   - target: llm-service
     type: runs_on

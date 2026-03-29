@@ -3,7 +3,7 @@ type: prompt
 id: feature-brief-generator
 title: Feature Brief Generator
 description: "Generate a structured feature brief from a rough idea, decomposing it into implementable components"
-tags: [Production, planning:product, design:product]
+tags: [Production, Planning, Strategy]
 connections:
   - target: feature-decomposition
     type: derived_from

@@ -3,7 +3,7 @@ type: skill
 id: edge-case-analysis
 title: Edge Case Analysis
 description: "Identifying edge cases, failure modes, and boundary conditions through systematic analysis across six dimensions"
-tags: [Production, Tested, analysis:risk, planning:product, quality:testing, design:product]
+tags: [Production, Tested, Planning, Quality]
 connections:
   - target: llm-service
     type: runs_on

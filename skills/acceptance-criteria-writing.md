@@ -3,7 +3,7 @@ type: skill
 id: acceptance-criteria-writing
 title: Acceptance Criteria Writing
 description: "Writing precise, testable acceptance criteria in Given/When/Then format with measurable outcomes"
-tags: [Production, Tested, planning:product, writing:product, quality:testing, design:product]
+tags: [Production, Tested, Planning, Quality, Writing]
 connections:
   - target: llm-service
     type: runs_on

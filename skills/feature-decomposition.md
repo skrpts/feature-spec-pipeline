@@ -3,7 +3,7 @@ type: skill
 id: feature-decomposition
 title: Feature Decomposition
 description: "Breaking down high-level features into implementable components with clear boundaries and dependencies"
-tags: [Production, Tested, planning:product, design:product]
+tags: [Production, Tested, Planning, Strategy]
 connections:
   - target: llm-service
     type: runs_on

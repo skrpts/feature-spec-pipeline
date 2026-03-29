@@ -3,7 +3,7 @@ type: prompt
 id: feature-spec-assembler
 title: Feature Spec Assembler
 description: "Assemble all pipeline outputs into a final, cohesive feature specification document"
-tags: [Production, planning:product, design:product]
+tags: [Production, Planning, Strategy]
 connections:
   - target: feature-decomposition
     type: derived_from

@@ -3,7 +3,7 @@ type: asset
 id: feature-spec-template
 title: Feature Specification Template
 description: "Template for the final feature specification document produced by this pipeline"
-tags: [Production, Customer-Facing, planning:product, design:product]
+tags: [Production, Customer-Facing, Planning, Strategy]
 connections: []
 metadata:
   asset_type: "template"

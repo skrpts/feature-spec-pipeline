@@ -3,7 +3,7 @@ type: workflow
 id: feature-spec-pipeline
 title: Feature Spec Pipeline
 description: "End-to-end workflow for generating detailed feature specifications from rough ideas through user stories, acceptance criteria, and edge case analysis"
-tags: [Production, Tested, analysis:risk, planning:product, writing:product, quality:testing]
+tags: [Production, Tested, Planning, Quality]
 connections:
   - target: feature-decomposition
     type: uses

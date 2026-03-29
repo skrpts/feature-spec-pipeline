@@ -3,7 +3,7 @@ type: source
 id: product-strategy-guide
 title: Product Strategy Guide
 description: "Reference framework for product strategy, vision alignment, and strategic decision-making"
-tags: [Production, planning:product, design:product]
+tags: [Production, Planning, Strategy]
 connections: []
 metadata:
   source_type: "reference"
