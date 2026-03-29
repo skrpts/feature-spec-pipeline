@@ -3,7 +3,7 @@ type: prompt
 id: acceptance-criteria-prompt
 title: Acceptance Criteria Generator
 description: "Generate precise, testable acceptance criteria in Given/When/Then format for each user story"
-tags: [Production]
+tags: [Production, planning:product, writing:product, quality:testing, design:product]
 connections:
   - target: acceptance-criteria-writing
     type: derived_from

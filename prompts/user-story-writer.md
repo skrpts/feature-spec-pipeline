@@ -3,7 +3,7 @@ type: prompt
 id: user-story-writer
 title: User Story Writer
 description: "Convert decomposed feature components into well-structured user stories with MoSCoW prioritisation"
-tags: [Production]
+tags: [Production, planning:product, writing:product, optimisation:prioritisation, design:product]
 connections:
   - target: feature-decomposition
     type: derived_from

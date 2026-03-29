@@ -3,7 +3,7 @@ type: prompt
 id: edge-case-finder
 title: Edge Case Finder
 description: "Systematically identify edge cases across six analysis dimensions for a feature"
-tags: [Production]
+tags: [Production, analysis:risk, planning:product, quality:testing, design:product]
 connections:
   - target: edge-case-analysis
     type: derived_from
