@@ -11,21 +11,9 @@ connections:
     type: uses
   - target: edge-case-analysis
     type: uses
-  - target: feature-brief-generator
-    type: uses
-  - target: user-story-writer
-    type: uses
-  - target: acceptance-criteria-prompt
-    type: uses
-  - target: edge-case-finder
-    type: uses
   - target: stakeholder-analysis
     type: uses
   - target: risk-assessment
-    type: uses
-  - target: feature-spec-assembler
-    type: uses
-  - target: risk-assessment-prompt
     type: uses
   - target: llm-service
     type: runs_on
