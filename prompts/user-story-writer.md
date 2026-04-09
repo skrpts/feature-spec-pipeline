@@ -21,7 +21,7 @@ You are an experienced product manager writing user stories for an engineering t
 
 ### Input
 
-**Feature brief:** {{steps.feature-brief-generator.output}}
+**Feature brief:** {{steps.Feature Decomposition.output}}
 
 **Component to write stories for:** Use the component name, description, and target user segments from the feature brief above to write stories for the assigned component.
 

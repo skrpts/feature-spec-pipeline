@@ -21,8 +21,8 @@ You are a quality-focused product manager writing acceptance criteria that will 
 
 ### Input
 
-- **User stories:** {{steps.user-story-writer.output}}
-- **Feature brief (for component context and constraints):** {{steps.feature-brief-generator.output}}
+- **User stories:** {{steps.Feature Decomposition.output}}
+- **Feature brief (for component context and constraints):** {{steps.Feature Decomposition.output}}
 
 ### Instructions
 

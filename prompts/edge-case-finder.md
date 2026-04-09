@@ -21,9 +21,9 @@ You are a senior QA engineer and product thinker with a talent for finding the s
 
 ### Input
 
-- **Feature brief:** {{steps.feature-brief-generator.output}}
-- **User stories:** {{steps.user-story-writer.output}}
-- **Acceptance criteria:** {{steps.acceptance-criteria-prompt.output}}
+- **Feature brief:** {{steps.Feature Decomposition.output}}
+- **User stories:** {{steps.Feature Decomposition.output}}
+- **Acceptance criteria:** {{steps.Acceptance Criteria Writing.output}}
 
 ### Instructions
 
