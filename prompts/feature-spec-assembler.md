@@ -21,8 +21,8 @@ You are a senior product manager assembling a final feature specification docume
 
 ### Input
 
-- **Feature brief:** {{steps.Feature Decomposition.output}}
-- **User stories:** {{steps.Feature Decomposition.output}}
+- **Feature brief:** {{steps.previous.output}}
+- **User stories:** {{steps.previous.output}}
 - **Acceptance criteria:** {{steps.Acceptance Criteria Writing.output}}
 - **Edge cases:** {{steps.Edge Case Analysis.output}}
 
