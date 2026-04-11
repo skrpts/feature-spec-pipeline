@@ -2,7 +2,7 @@ id: "57dba501-5851-47e3-9701-5c5da0079020"
 name: "feature-spec-pipeline"
 display_name: "Feature Spec Pipeline"
 description: "Generate detailed feature specifications from rough ideas, including user stories, acceptance criteria, and edge cases"
-version: "1.1.5"
+version: "1.1.6"
 engine: ">=1.0.0"
 
 author:
@@ -26,6 +26,18 @@ requires:
   data_handling:
     - "pii"
     - "product-requirements"
+
+# --- Output ---
+output_step: "stakeholder-analysis"
+composite_steps:
+  - "feature-decomposition"
+  - "acceptance-criteria-writing"
+  - "edge-case-analysis"
+  - "stakeholder-analysis"
+  - "risk-assessment"
+  - "brief-compliance-check"
+  - "consistency-check"
+  - "input-gap-check"
 
 contents:
   skills: 8
