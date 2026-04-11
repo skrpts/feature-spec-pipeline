@@ -35,6 +35,22 @@ metadata:
   estimated_duration: "20 minutes"
   avg_tokens: 15000
   trigger: manual
+execution:
+  - skill: "feature-decomposition"
+  - skill: "acceptance-criteria-writing"
+    input_from: "feature-decomposition"
+  - skill: "edge-case-analysis"
+    input_from: "acceptance-criteria-writing"
+  - skill: "stakeholder-analysis"
+    input_from: "edge-case-analysis"
+  - skill: "risk-assessment"
+    input_from: "stakeholder-analysis"
+  - skill: "brief-compliance-check"
+    input_from: "stakeholder-analysis"
+  - skill: "consistency-check"
+    input_from: "stakeholder-analysis"
+  - skill: "input-gap-check"
+    input_from: "stakeholder-analysis"
 ---
 
 ## Feature Spec Pipeline
