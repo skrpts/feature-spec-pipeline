@@ -4,6 +4,13 @@ id: analyse-stakeholders
 title: "Analyse Stakeholders"
 description: "Maps stakeholders by influence, interest, and engagement strategy"
 tags: [Production, Planning]
+inputs:
+  org_context:
+    label: "Organisational Context"
+    description: "Context about the organisation — size, structure, culture"
+    example: "200-person startup. Engineering-led. Flat hierarchy."
+    required: true
+    type: text
 connections:
   - target: stakeholder-analysis
     type: derived_from

@@ -4,6 +4,24 @@ id: feature-brief-generator
 title: Feature Brief Generator
 description: "Generate a structured feature brief from a rough idea, decomposing it into implementable components"
 tags: [Production, Planning, Strategy]
+inputs:
+  feature_idea:
+    label: "Feature Idea"
+    description: "The feature concept to develop into a specification"
+    example: "Add real-time collaboration to the document editor"
+    required: true
+    type: text
+  business_context:
+    label: "Business Context"
+    description: "Business Context"
+    required: true
+    type: text
+  constraints:
+    label: "Constraints"
+    description: "Known constraints"
+    example: "Must ship before conference on 15 June. Cannot change database."
+    required: true
+    type: text
 connections:
   - target: feature-decomposition
     type: derived_from
