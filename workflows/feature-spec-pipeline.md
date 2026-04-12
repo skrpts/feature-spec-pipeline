@@ -37,19 +37,27 @@ metadata:
   trigger: manual
 execution:
   - skill: "feature-decomposition"
+    step_type: "generation"
   - skill: "acceptance-criteria-writing"
+    step_type: "generation"
     input_from: "feature-decomposition"
   - skill: "edge-case-analysis"
+    step_type: "synthesis"
     input_from: "acceptance-criteria-writing"
   - skill: "stakeholder-analysis"
+    step_type: "synthesis"
     input_from: "edge-case-analysis"
   - skill: "risk-assessment"
+    step_type: "synthesis"
     input_from: "stakeholder-analysis"
   - skill: "brief-compliance-check"
+    step_type: "review"
     input_from: "stakeholder-analysis"
   - skill: "consistency-check"
+    step_type: "review"
     input_from: "stakeholder-analysis"
   - skill: "input-gap-check"
+    step_type: "review"
     input_from: "stakeholder-analysis"
 ---
 
