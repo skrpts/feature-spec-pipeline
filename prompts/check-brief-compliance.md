@@ -4,7 +4,13 @@ id: check-brief-compliance
 title: "Check Brief Compliance"
 description: "Verifies output meets all requirements from the original brief"
 tags: [Production, Quality]
-inputs: {}
+inputs:
+  brief:
+    label: "Brief"
+    description: "The full assignment or project brief including requirements, constraints, and expected deliverables"
+    example: "Write a 2000-word analysis of competitive pricing strategies in the SaaS market"
+    required: true
+    type: text
 connections:
   - target: brief-compliance-check
     type: derived_from
@@ -23,9 +29,7 @@ You are a quality reviewer. Compare the output below against its original brief 
 
 ### Original Brief
 
-- **Feature:** {{input.feature_idea}}
-- **Business context:** {{input.business_context}}
-- **Constraints:** {{input.constraints}}
+{{input.brief}}
 
 ### Output to Check
 
