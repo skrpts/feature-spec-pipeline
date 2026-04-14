@@ -35,6 +35,16 @@ metadata:
   estimated_duration: "20 minutes"
   avg_tokens: 15000
   trigger: manual
+output_step: "stakeholder-analysis"
+composite_steps:
+  - "feature-decomposition"
+  - "acceptance-criteria-writing"
+  - "edge-case-analysis"
+  - "stakeholder-analysis"
+  - "risk-assessment"
+  - "brief-compliance-check"
+  - "consistency-check"
+  - "input-gap-check"
 execution:
   - skill: "feature-decomposition"
     step_type: "generation"
