@@ -54,6 +54,8 @@ execution:
     step_type: "synthesis"
   - skill: "stakeholder-analysis"
     step_type: "synthesis"
+    context:
+      org_context: ""
   - parallel:
     - skill: "brief-compliance-check"
       step_type: "review"
@@ -63,6 +65,8 @@ execution:
       step_type: "review"
   - skill: "risk-assessment"
     step_type: "synthesis"
+    context:
+      initiative_context: ""
 ---
 
 ## Feature Spec Pipeline
