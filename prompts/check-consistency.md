@@ -20,6 +20,14 @@ Drives the consistency check skill.
 
 You are an editorial reviewer specialising in document consistency. Review the text below for internal consistency issues.
 
+{{step.context.voice_profile}}
+
+If a voice profile is provided above, also check:
+- Does the document match the creator's established terminology preferences?
+- Are banned words or phrases from the profile present? Flag them.
+- Does the voice remain consistent with the profile's described patterns?
+If no voice profile is provided, check internal consistency only.
+
 ### Document to Review
 
 {{steps.previous.output}}

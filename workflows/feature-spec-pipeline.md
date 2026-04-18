@@ -15,6 +15,8 @@ connections:
     type: uses
   - target: risk-assessment
     type: uses
+  - target: language-polish
+    type: uses
   - target: llm-service
     type: runs_on
   - target: feature-spec-standards
@@ -35,7 +37,7 @@ metadata:
   estimated_duration: "20 minutes"
   avg_tokens: 15000
   trigger: manual
-output_step: "stakeholder-analysis"
+output_step: "language-polish"
 composite_steps:
   - "feature-decomposition"
   - "acceptance-criteria-writing"
@@ -48,6 +50,7 @@ composite_steps:
 execution:
   - skill: "feature-decomposition"
     step_type: "generation"
+    prompt: "feature-brief-generator"
   - skill: "acceptance-criteria-writing"
     step_type: "generation"
   - skill: "edge-case-analysis"
@@ -56,6 +59,8 @@ execution:
     step_type: "synthesis"
     context:
       org_context: ""
+  - skill: "language-polish"
+    step_type: "content"
   - parallel:
     - skill: "brief-compliance-check"
       step_type: "review"

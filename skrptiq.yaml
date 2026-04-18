@@ -2,7 +2,7 @@ id: "57dba501-5851-47e3-9701-5c5da0079020"
 name: "feature-spec-pipeline"
 display_name: "Feature Spec Pipeline"
 description: "Generate detailed feature specifications from rough ideas, including user stories, acceptance criteria, and edge cases"
-version: "1.1.14"
+version: "1.1.15"
 engine: ">=1.0.0"
 
 author:
@@ -28,11 +28,11 @@ requires:
     - "product-requirements"
 
 contents:
-  skills: 8
-  prompts: 9
+  skills: 9
+  prompts: 10
   workflows: 1
   services: 1
   sources: 2
   documents: 1
   assets: 1
-  total: 23
+  total: 25
