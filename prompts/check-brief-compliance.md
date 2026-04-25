@@ -30,11 +30,21 @@ If no audience profile is provided, check brief compliance only.
 
 ### Original Brief
 
-{{steps.previous.output}}
+{{step.context.compliance_brief}}
+
+If no brief is provided above, extract the implicit requirements from the output itself — identify what the document claims to deliver (from its title, introduction, and structure) and check whether it delivers on those claims.
 
 ### Output to Check
 
 {{steps.previous.output}}
+
+### Compliance Depth: {{step.context.compliance_depth}}
+
+Adjust your review based on the depth level:
+- **Overview**: Check the 3-5 most critical requirements only. Quick pass.
+- **Standard** (default): Check all stated requirements. Flag missing or violated items.
+- **Thorough**: Check all requirements plus implied ones. Assess quality of compliance, not just presence.
+- **Exhaustive**: Maximum rigour. Check every requirement, assess quality and completeness, compare against best-in-class examples, and suggest improvements even for met requirements.
 
 ### Instructions
 
