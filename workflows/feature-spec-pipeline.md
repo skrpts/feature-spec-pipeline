@@ -65,13 +65,23 @@ execution:
   - skill: "language-polish"
     prompt: "polish-language"
     step_type: "content"
+    context:
+      voice_profile: ""
+      grammar_strictness: ""
   - parallel:
     - skill: "brief-compliance-check"
       prompt: "check-brief-compliance"
       step_type: "review"
+      context:
+        audience_profile: ""
+        compliance_brief: ""
+        compliance_depth: ""
     - skill: "consistency-check"
       prompt: "check-consistency"
       step_type: "review"
+      context:
+        voice_profile: ""
+        consistency_strictness: ""
     - skill: "input-gap-check"
       step_type: "review"
   - skill: "risk-assessment"
