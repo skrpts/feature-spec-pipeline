@@ -1,5 +1,8 @@
 # Release Notes
 
+## v1.1.25
+Tags migrated inline into manifest (GH#586). tags.yaml retired.
+
 ## v1.1.24
 Bundle re-signed with canonical engine signing pipeline (Wave 2 migration).
 

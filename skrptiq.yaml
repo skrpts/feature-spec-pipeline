@@ -2,7 +2,7 @@ id: "57dba501-5851-47e3-9701-5c5da0079020"
 name: "feature-spec-pipeline"
 display_name: "Feature Spec Pipeline"
 description: "Generate detailed feature specifications from rough ideas, including user stories, acceptance criteria, and edge cases"
-version: "1.1.24"
+version: "1.1.25"
 engine: ">=0.1.0"
 
 author:
@@ -13,11 +13,11 @@ repository: "https://github.com/skrpts/feature-spec-pipeline"
 
 category: "product-manager"
 tags:
-  - "feature-specification"
-  - "user-stories"
   - "acceptance-criteria"
+  - "feature-specification"
   - "product-management"
   - "requirements"
+  - "user-stories"
 
 requires:
   services:
