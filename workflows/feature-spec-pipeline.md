@@ -51,20 +51,25 @@ execution:
   - skill: "feature-decomposition"
     step_type: "generation"
     prompt: "feature-brief-generator"
+    output: { name: "feature_brief", type: "text" }
   - skill: "acceptance-criteria-writing"
     prompt: "acceptance-criteria-prompt"
     step_type: "generation"
+    output: { name: "acceptance_criteria", type: "list" }
   - skill: "edge-case-analysis"
     prompt: "edge-case-finder"
     step_type: "synthesis"
+    output: { name: "edge_cases", type: "list" }
   - skill: "stakeholder-analysis"
     prompt: "analyse-stakeholders"
     step_type: "synthesis"
+    output: { name: "stakeholder_analysis", type: "text" }
     context:
       org_context: "No additional organisational context"
   - skill: "language-polish"
     prompt: "polish-language"
     step_type: "content"
+    output: { name: "polished_spec", type: "text" }
     context:
       voice_profile: "Neutral professional tone"
       grammar_strictness: "Professional"
@@ -72,6 +77,7 @@ execution:
     - skill: "brief-compliance-check"
       prompt: "check-brief-compliance"
       step_type: "review"
+      output: { name: "compliance_verdict", type: "decision" }
       context:
         audience_profile: "General professional audience"
         compliance_brief: "No specific compliance requirements"
@@ -79,15 +85,18 @@ execution:
     - skill: "consistency-check"
       prompt: "check-consistency"
       step_type: "review"
+      output: { name: "consistency_verdict", type: "decision" }
       context:
         voice_profile: "Neutral professional tone"
         consistency_strictness: "Standard"
     - skill: "input-gap-check"
       prompt: "check-input-gaps"
-    step_type: "validation"
+      step_type: "validation"
+      output: { name: "input_gaps", type: "decision" }
   - skill: "risk-assessment"
     prompt: "risk-assessment-prompt"
     step_type: "synthesis"
+    output: { name: "risk_assessment", type: "text" }
     context:
       initiative_context: "No additional initiative context"
 ---
