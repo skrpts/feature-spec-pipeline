@@ -37,7 +37,7 @@ Then [observable outcome]
 ```
 
 **Rules:**
-- Each criterion tests exactly one behaviour
+- Each criterion tests exactly one behavior
 - Outcomes must be measurable — no subjective terms
 - Performance thresholds follow the standard: page loads < 2s, API responses < 500ms, batch operations < 30s
 - Error messages must be specified verbatim where user-facing
@@ -62,7 +62,7 @@ Then [observable outcome]
 
 **Review process:** Every specification must be reviewed by at least one engineer and one designer before moving to "Approved" status.
 
-### MoSCoW Prioritisation Guidelines
+### MoSCoW Prioritization Guidelines
 
 | Priority | Criterion |
 |----------|-----------|

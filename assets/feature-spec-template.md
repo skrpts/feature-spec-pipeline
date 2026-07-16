@@ -109,7 +109,7 @@ Then [outcome]
 
 **EC-001: [Title]**
 - **Scenario:** [Description]
-- **Expected behaviour:** [What should happen]
+- **Expected behavior:** [What should happen]
 - **Recommendation:** [Detailed handling approach]
 
 ## 9. Dependency Map

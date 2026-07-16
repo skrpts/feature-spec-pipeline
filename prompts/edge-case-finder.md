@@ -89,7 +89,7 @@ For each edge case, provide:
 | **Title** | A short, descriptive title |
 | **Scenario** | 2-3 sentences describing the specific situation |
 | **Severity** | Critical, High, Medium, or Low |
-| **Expected behaviour** | What should happen when this edge case occurs |
+| **Expected behavior** | What should happen when this edge case occurs |
 | **Recommendation** | How to handle it (prevent, handle gracefully, defer, or accept risk) |
 
-Aim for a minimum of 8 edge cases, with at least one from each dimension. Prioritise Critical and High severity cases. Do not list trivial or obvious cases that are already covered by the acceptance criteria.
+Aim for a minimum of 8 edge cases, with at least one from each dimension. Prioritize Critical and High severity cases. Do not list trivial or obvious cases that are already covered by the acceptance criteria.

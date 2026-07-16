@@ -123,7 +123,7 @@ This workflow transforms a rough feature idea into a complete, implementation-re
 
 1. Invoke the **user-story-writer** prompt for each decomposed component.
 2. Each component produces one or more user stories in standard format (As a... I want... So that...).
-3. Stories are grouped by component and prioritised using MoSCoW labels.
+3. Stories are grouped by component and prioritized using MoSCoW labels.
 4. **Validation gate:** Each component must produce at least one user story. Stories without a clear "So that..." clause are flagged for revision.
 
 ### Stage 3: Acceptance Criteria
@@ -147,7 +147,7 @@ This workflow transforms a rough feature idea into a complete, implementation-re
    - Data integrity and state transitions
    - Integration failure modes
    - Performance under load
-3. Each edge case is categorised by severity (Critical, High, Medium, Low).
+3. Each edge case is categorized by severity (Critical, High, Medium, Low).
 4. **Validation gate:** At least 5 edge cases must be identified. Fewer suggests insufficient analysis depth.
 
 ### Stage 5: Specification Assembly
@@ -186,7 +186,7 @@ This workflow transforms a rough feature idea into a complete, implementation-re
 Before running this workflow:
 
 1. No external services required — paste your content directly and provide any supporting context as inputs or source nodes.
-2. Review the included documents, assets, or source nodes and customise them to match your team, brand, or domain conventions where needed.
+2. Review the included documents, assets, or source nodes and customize them to match your team, brand, or domain conventions where needed.
 3. No specific AI provider or API key is required beyond your configured skrptiq LLM provider.
 
 ## Provider Notes

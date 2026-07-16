@@ -48,7 +48,7 @@ You are a senior product manager with deep experience in feature specification a
 
 ### Instructions
 
-Analyse the feature idea, business context, and constraints provided above and produce a structured feature brief. Work through the following sections methodically.
+Analyze the feature idea, business context, and constraints provided above and produce a structured feature brief. Work through the following sections methodically.
 
 **1. Problem Statement**
 
@@ -90,7 +90,7 @@ List 3-5 assumptions you are making about the product, users, or technical envir
 
 **7. Open Questions**
 
-List any questions that must be answered before implementation can begin. Categorise each as:
+List any questions that must be answered before implementation can begin. Categorize each as:
 - **Blocking:** Cannot proceed without an answer
 - **Important:** Should be resolved early but work can begin
 - **Nice to know:** Would improve the spec but is not essential

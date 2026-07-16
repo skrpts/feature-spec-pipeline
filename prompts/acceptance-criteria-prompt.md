@@ -47,7 +47,7 @@ Work through the following categories systematically to ensure complete coverage
 
 3. **State change criteria:** Write criteria that verify the system state after the action. If the story involves creating, updating, or deleting data, what evidence should exist that the change occurred? Is there an audit trail? Are related records updated?
 
-4. **Boundary criteria:** Write criteria for behaviour at boundaries. What happens at the minimum and maximum allowed values? What happens with exactly the limit (e.g., exactly 255 characters in a 255-character field)?
+4. **Boundary criteria:** Write criteria for behavior at boundaries. What happens at the minimum and maximum allowed values? What happens with exactly the limit (e.g., exactly 255 characters in a 255-character field)?
 
 5. **Permission criteria:** If the story involves any access control, write criteria for both authorised and unauthorised access attempts. What does an unauthorised user see? Are they redirected? Is the attempt logged?
 

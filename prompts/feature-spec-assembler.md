@@ -42,7 +42,7 @@ Pull the problem statement and proposed solution from the feature brief. Refine 
 
 **User Stories Section**
 
-Organise all user stories by component, with MoSCoW priority clearly indicated. Add a summary count: "X Must Have, Y Should Have, Z Could Have, W Won't Have (this iteration)." Include a brief narrative paragraph before the stories that explains the overall user journey.
+Organize all user stories by component, with MoSCoW priority clearly indicated. Add a summary count: "X Must Have, Y Should Have, Z Could Have, W Won't Have (this iteration)." Include a brief narrative paragraph before the stories that explains the overall user journey.
 
 **Acceptance Criteria Section**
 
@@ -50,7 +50,7 @@ Present acceptance criteria grouped by user story. Each story should have its cr
 
 **Edge Cases & Risk Register**
 
-Present the edge cases organised by severity (Critical first, then High, Medium, Low). For each edge case, include the recommended handling approach. Add a summary risk statement: "X Critical, Y High, Z Medium, W Low edge cases identified."
+Present the edge cases organized by severity (Critical first, then High, Medium, Low). For each edge case, include the recommended handling approach. Add a summary risk statement: "X Critical, Y High, Z Medium, W Low edge cases identified."
 
 **Dependency Map**
 

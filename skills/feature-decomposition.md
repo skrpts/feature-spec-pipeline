@@ -27,7 +27,7 @@ Given a rough feature idea — which may range from a single sentence to several
 
 The decomposition follows a layered approach:
 
-1. **Functional layer:** Identify the distinct user-facing behaviours the feature must support. Each behaviour that could be independently tested or released is a separate component. Ask: "Could a user notice if this specific part were missing?"
+1. **Functional layer:** Identify the distinct user-facing behaviors the feature must support. Each behavior that could be independently tested or released is a separate component. Ask: "Could a user notice if this specific part were missing?"
 
 2. **Data layer:** Identify the data entities, relationships, and transformations the feature requires. New data models, schema changes, and migration needs are surfaced here. Ask: "What data must exist, change, or be created for this to work?"
 

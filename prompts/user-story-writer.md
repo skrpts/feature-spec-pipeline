@@ -2,8 +2,8 @@
 type: prompt
 id: user-story-writer
 title: User Story Writer
-description: "Convert decomposed feature components into well-structured user stories with MoSCoW prioritisation"
-tags: [Production, Optimisation, Planning, Strategy]
+description: "Convert decomposed feature components into well-structured user stories with MoSCoW prioritization"
+tags: [Production, Optimization, Planning, Strategy]
 connections:
   - target: feature-decomposition
     type: derived_from
@@ -27,7 +27,7 @@ You are an experienced product manager writing user stories for an engineering t
 
 ### Instructions
 
-For the specified component, write a complete set of user stories. Each story must follow the standard format and include prioritisation.
+For the specified component, write a complete set of user stories. Each story must follow the standard format and include prioritization.
 
 **Story Format**
 
@@ -47,7 +47,7 @@ For each user story, provide:
 - Each story must be independently deliverable. A developer should be able to pick up any single story and implement it without first completing another story in the set (unless an explicit dependency is noted).
 - Stories should not prescribe implementation details. Describe the what and why, never the how.
 
-**Prioritisation Guidelines**
+**Prioritization Guidelines**
 
 - **Must Have:** The feature cannot be considered delivered without this story. Failure to deliver it renders the entire feature unusable.
 - **Should Have:** Important for a complete experience but the feature is still functional without it. Would cause significant user dissatisfaction if missing.
@@ -59,7 +59,7 @@ For each user story, provide:
 For each component, ensure you cover:
 - The primary happy-path interaction (Must Have)
 - Error and validation scenarios (Must Have or Should Have)
-- Configuration or customisation options (Should Have or Could Have)
+- Configuration or customization options (Should Have or Could Have)
 - Administrative or management capabilities if applicable (Should Have)
 
 Aim for 3-6 stories per component. Fewer than 3 suggests the component is under-specified. More than 6 suggests it should be decomposed further.

@@ -47,7 +47,7 @@ Each criterion is a single, atomic statement. Compound criteria (those using "an
    - Permission boundaries (unauthorised access attempts)
    - State transitions (what changes in the system after success)
 
-5. **Boundary conditions.** Explicitly state behaviour at boundaries:
+5. **Boundary conditions.** Explicitly state behavior at boundaries:
    - Empty states (no data, first-time use)
    - Maximum limits (character counts, file sizes, list lengths)
    - Concurrent access (two users editing simultaneously)
@@ -62,7 +62,7 @@ More than 7 criteria per story suggests the story should be split.
 
 ### Anti-Patterns to Avoid
 
-- **Implementation criteria:** "The system uses a Redis cache" is an implementation detail, not acceptance criterion. Focus on behaviour, not architecture.
-- **Duplicate coverage:** If two criteria test the same behaviour with different wording, consolidate them.
+- **Implementation criteria:** "The system uses a Redis cache" is an implementation detail, not acceptance criterion. Focus on behavior, not architecture.
+- **Duplicate coverage:** If two criteria test the same behavior with different wording, consolidate them.
 - **Assumed context:** Never assume the reader knows the domain. Spell out what "active user" or "valid input" means in the Given clause.
 - **Untestable criteria:** "The system is secure" or "The UX is intuitive" are not criteria. They are aspirations.

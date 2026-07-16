@@ -31,7 +31,7 @@ You do not need a polished brief. The pipeline's first stage handles structuring
 
 **Stage 1: Feature Brief.** This stage takes your rough idea and produces a structured brief with a problem statement, solution overview, scope boundaries, and a decomposition into components. Review the output carefully — the rest of the pipeline builds on this foundation. If the decomposition misses a major component, add it here before proceeding.
 
-**Stage 2: User Stories.** Each component from the brief generates user stories in standard format. Stories are prioritised using MoSCoW. Review the priorities — they determine what gets built first. Challenge any "Must Have" label that does not genuinely block the feature from being usable.
+**Stage 2: User Stories.** Each component from the brief generates user stories in standard format. Stories are prioritized using MoSCoW. Review the priorities — they determine what gets built first. Challenge any "Must Have" label that does not genuinely block the feature from being usable.
 
 **Stage 3: Acceptance Criteria.** Each user story receives testable criteria in Given/When/Then format. These become the contract with your engineering team. If a criterion feels too vague to test, it needs rewriting. If you cannot imagine a QA engineer executing the test, the criterion is not specific enough.
 
@@ -55,5 +55,5 @@ You do not need a polished brief. The pipeline's first stage handles structuring
 
 - **Over-specifying implementation details.** The spec should describe what and why, never how. Leave implementation decisions to engineering.
 - **Under-specifying error handling.** If the spec does not say what happens when something goes wrong, engineering will make their own decisions — and they may not match your expectations.
-- **Ignoring existing patterns.** Check how similar features work in your product. Consistency matters more than local optimisation.
+- **Ignoring existing patterns.** Check how similar features work in your product. Consistency matters more than local optimization.
 - **Skipping the edge case review.** Edge cases feel theoretical until they become production incidents. Review them seriously.

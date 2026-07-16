@@ -21,13 +21,13 @@ This skill systematically identifies edge cases, failure modes, and boundary con
 
 ### Core Capability
 
-Given a feature's user stories and acceptance criteria, this skill produces a categorised inventory of edge cases — scenarios that fall outside the happy path but must be explicitly handled to avoid bugs, data corruption, or degraded user experience.
+Given a feature's user stories and acceptance criteria, this skill produces a categorized inventory of edge cases — scenarios that fall outside the happy path but must be explicitly handled to avoid bugs, data corruption, or degraded user experience.
 
 ### The Six Dimensions
 
 #### 1. Input Boundaries
 
-Analyse every user input and data entry point for boundary behaviour:
+Analyze every user input and data entry point for boundary behavior:
 
 - **Empty inputs:** What happens when required fields are left blank, optional fields are omitted, or arrays are empty?
 - **Maximum values:** What happens at character limits, file size caps, numeric maximums?
@@ -36,16 +36,16 @@ Analyse every user input and data entry point for boundary behaviour:
 
 #### 2. Concurrency and Timing
 
-Analyse scenarios where multiple actions occur simultaneously or in unexpected sequences:
+Analyze scenarios where multiple actions occur simultaneously or in unexpected sequences:
 
 - **Race conditions:** Two users editing the same record. A save request arriving after a delete.
 - **Stale data:** User viewing data that has been modified by another process since page load.
 - **Timeout scenarios:** What happens when an API call takes 30 seconds? When a background job never completes?
-- **Retry behaviour:** What happens when a failed operation is retried — is it idempotent?
+- **Retry behavior:** What happens when a failed operation is retried — is it idempotent?
 
 #### 3. Permission and Access Control
 
-Analyse authorisation boundaries:
+Analyze authorisation boundaries:
 
 - **Role transitions:** What happens when a user's role changes mid-session?
 - **Shared resources:** Can User A access User B's data through predictable URL patterns?
@@ -54,7 +54,7 @@ Analyse authorisation boundaries:
 
 #### 4. Data Integrity and State Transitions
 
-Analyse data consistency across state changes:
+Analyze data consistency across state changes:
 
 - **Partial failures:** What happens if step 3 of a 5-step process fails? Is the data left in a consistent state?
 - **Rollback scenarios:** Can a failed operation be cleanly reversed?
@@ -63,7 +63,7 @@ Analyse data consistency across state changes:
 
 #### 5. Integration Failure Modes
 
-Analyse behaviour when external dependencies fail:
+Analyze behavior when external dependencies fail:
 
 - **Service unavailability:** What happens when a third-party API is down?
 - **Degraded responses:** What happens when an API returns a 200 but with incomplete data?
@@ -72,7 +72,7 @@ Analyse behaviour when external dependencies fail:
 
 #### 6. Performance Under Load
 
-Analyse behaviour at scale:
+Analyze behavior at scale:
 
 - **Large data sets:** What happens when a list contains 10,000 items instead of 10?
 - **Burst traffic:** What happens when 100 users trigger the same action simultaneously?
@@ -90,4 +90,4 @@ Each identified edge case is classified:
 
 ### Output Format
 
-Each edge case entry contains: a descriptive title, the dimension it belongs to, a severity rating, a description of the scenario, expected behaviour (what should happen), and a recommended handling approach.
+Each edge case entry contains: a descriptive title, the dimension it belongs to, a severity rating, a description of the scenario, expected behavior (what should happen), and a recommended handling approach.
