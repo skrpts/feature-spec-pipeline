@@ -4,6 +4,16 @@ id: acceptance-criteria-prompt
 title: Acceptance Criteria Generator
 description: "Generate precise, testable acceptance criteria in Given/When/Then format for each user story"
 tags: [Production, Planning, Quality, Strategy]
+context_params:
+  feature_brief:
+    label: "Feature Brief"
+    description: "The feature brief — component context and constraints."
+    required: false
+  user_stories:
+    label: "User Stories"
+    description: "The prioritised user stories to write acceptance criteria for."
+    required: false
+    default_from_previous: true
 connections:
   - target: acceptance-criteria-writing
     type: derived_from
@@ -21,8 +31,8 @@ You are a quality-focused product manager writing acceptance criteria that will 
 
 ### Input
 
-- **User stories:** {{steps.Feature Decomposition.output}}
-- **Feature brief (for component context and constraints):** {{steps.Feature Decomposition.output}}
+- **User stories:** {{step.context.user_stories}}
+- **Feature brief (for component context and constraints):** {{step.context.feature_brief}}
 
 ### Instructions
 

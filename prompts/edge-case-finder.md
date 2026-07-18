@@ -4,6 +4,20 @@ id: edge-case-finder
 title: Edge Case Finder
 description: "Systematically identify edge cases across six analysis dimensions for a feature"
 tags: [Production, Planning, Quality]
+context_params:
+  feature_brief:
+    label: "Feature Brief"
+    description: "The feature brief — component context for the edge-case sweep."
+    required: false
+  user_stories:
+    label: "User Stories"
+    description: "The prioritised user stories to probe for edge cases."
+    required: false
+  acceptance_criteria:
+    label: "Acceptance Criteria"
+    description: "The acceptance criteria — the coverage baseline to extend beyond."
+    required: false
+    default_from_previous: true
 connections:
   - target: edge-case-analysis
     type: derived_from
@@ -21,9 +35,9 @@ You are a senior QA engineer and product thinker with a talent for finding the s
 
 ### Input
 
-- **Feature brief:** {{steps.Feature Decomposition.output}}
-- **User stories:** {{steps.Feature Decomposition.output}}
-- **Acceptance criteria:** {{steps.Acceptance Criteria Writing.output}}
+- **Feature brief:** {{step.context.feature_brief}}
+- **User stories:** {{step.context.user_stories}}
+- **Acceptance criteria:** {{step.context.acceptance_criteria}}
 
 ### Instructions
 

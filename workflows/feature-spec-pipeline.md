@@ -7,6 +7,8 @@ tags: [Production, Tested, Planning, Quality]
 connections:
   - target: feature-decomposition
     type: uses
+  - target: user-story-writing
+    type: uses
   - target: acceptance-criteria-writing
     type: uses
   - target: edge-case-analysis
@@ -14,6 +16,8 @@ connections:
   - target: stakeholder-analysis
     type: uses
   - target: risk-assessment
+    type: uses
+  - target: feature-spec-assembly
     type: uses
   - target: language-polish
     type: uses
@@ -40,10 +44,12 @@ metadata:
 output_step: "language-polish"
 composite_steps:
   - "feature-decomposition"
+  - "user-story-writing"
   - "acceptance-criteria-writing"
   - "edge-case-analysis"
   - "stakeholder-analysis"
   - "risk-assessment"
+  - "feature-spec-assembly"
   - "brief-compliance-check"
   - "consistency-check"
   - "input-gap-check"
@@ -52,20 +58,71 @@ execution:
     step_type: "generation"
     prompt: "feature-brief-generator"
     output: { name: "feature_brief", type: "text" }
+  - skill: "user-story-writing"
+    prompt: "user-story-writer"
+    step_type: "generation"
+    output: { name: "user_stories", type: "list" }
+    bindings:
+      feature_brief:
+        from_step: "Feature Decomposition"
+        field: output
   - skill: "acceptance-criteria-writing"
     prompt: "acceptance-criteria-prompt"
     step_type: "generation"
     output: { name: "acceptance_criteria", type: "list" }
+    bindings:
+      feature_brief:
+        from_step: "Feature Decomposition"
+        field: output
+      user_stories:
+        from_step: "User Story Writer"
+        field: output
   - skill: "edge-case-analysis"
     prompt: "edge-case-finder"
     step_type: "synthesis"
     output: { name: "edge_cases", type: "list" }
+    bindings:
+      feature_brief:
+        from_step: "Feature Decomposition"
+        field: output
+      user_stories:
+        from_step: "User Story Writer"
+        field: output
+      acceptance_criteria:
+        from_step: "Acceptance Criteria Writing"
+        field: output
   - skill: "stakeholder-analysis"
     prompt: "analyse-stakeholders"
     step_type: "synthesis"
     output: { name: "stakeholder_analysis", type: "text" }
     context:
       org_context: "No additional organisational context"
+  - skill: "risk-assessment"
+    prompt: "risk-assessment-prompt"
+    step_type: "synthesis"
+    output: { name: "risk_assessment", type: "text" }
+    context:
+      initiative_context: "No additional initiative context"
+  - skill: "feature-spec-assembly"
+    prompt: "feature-spec-assembler"
+    step_type: "synthesis"
+    output: { name: "feature_spec", type: "text" }
+    bindings:
+      feature_brief:
+        from_step: "Feature Decomposition"
+        field: output
+      user_stories:
+        from_step: "User Story Writer"
+        field: output
+      acceptance_criteria:
+        from_step: "Acceptance Criteria Writing"
+        field: output
+      edge_cases:
+        from_step: "Edge Case Analysis"
+        field: output
+      risk_assessment:
+        from_step: "Risk Assessment"
+        field: output
   - skill: "language-polish"
     prompt: "polish-language"
     step_type: "content"
@@ -73,6 +130,10 @@ execution:
     context:
       voice_profile: "Neutral professional tone"
       grammar_strictness: "Professional"
+    bindings:
+      source:
+        from_step: "Feature Spec Assembler"
+        field: output
   - parallel:
     - skill: "brief-compliance-check"
       prompt: "check-brief-compliance"
@@ -93,17 +154,11 @@ execution:
       prompt: "check-input-gaps"
       step_type: "validation"
       output: { name: "input_gaps", type: "decision" }
-  - skill: "risk-assessment"
-    prompt: "risk-assessment-prompt"
-    step_type: "synthesis"
-    output: { name: "risk_assessment", type: "text" }
-    context:
-      initiative_context: "No additional initiative context"
 ---
 
 ## Feature Spec Pipeline
 
-This workflow transforms a rough feature idea into a complete, implementation-ready feature specification. It follows a structured five-stage pipeline, with each stage building upon the outputs of the previous one.
+This workflow transforms a rough feature idea into a complete, implementation-ready feature specification. It follows a structured multi-stage pipeline, with each stage building upon the outputs of the previous one.
 
 ### Stage 1: Feature Brief Generation
 
@@ -150,15 +205,39 @@ This workflow transforms a rough feature idea into a complete, implementation-re
 3. Each edge case is categorized by severity (Critical, High, Medium, Low).
 4. **Validation gate:** At least 5 edge cases must be identified. Fewer suggests insufficient analysis depth.
 
-### Stage 5: Specification Assembly
+### Stage 5: Stakeholder Analysis
 
-**Input:** All outputs from Stages 1-4.
+**Input:** The feature brief from Stage 1.
 
-1. Invoke the **feature-spec-assembler** prompt.
-2. Compile the feature brief, user stories, acceptance criteria, and edge cases into a single specification document following the **feature-spec-template**.
+1. Invoke the **analyse-stakeholders** prompt using the **stakeholder-analysis** skill.
+2. Identify the stakeholders affected by the feature, their interests, and their influence.
+3. Surface any stakeholder concerns that should shape the specification or its rollout.
+
+### Stage 6: Risk Assessment
+
+**Input:** The feature brief and the analysis from the preceding stages.
+
+1. Invoke the **risk-assessment-prompt** using the **risk-assessment** skill.
+2. Enumerate the delivery and product risks for the initiative, each with a likelihood, an impact, and a mitigation.
+3. This assessment is folded into the risk register of the assembled specification.
+
+### Stage 7: Specification Assembly
+
+**Input:** All outputs from Stages 1-6 (feature brief, user stories, acceptance criteria, edge cases, and risk assessment).
+
+1. Invoke the **feature-spec-assembler** prompt using the **feature-spec-assembly** skill.
+2. Compile the feature brief, user stories, acceptance criteria, edge cases, and risk assessment into a single specification document following the **feature-spec-template**.
 3. Add a dependency map showing relationships between components.
 4. Include an implementation priority recommendation.
 5. **Output:** A complete feature specification document ready for engineering handoff.
+
+### Stage 8: Polish & Quality Review
+
+**Input:** The assembled specification from Stage 7.
+
+1. Run the **language-polish** step over the assembled specification to produce the final, consistently-voiced document.
+2. In parallel, run the quality gates: **brief-compliance-check**, **consistency-check**, and **input-gap-check**.
+3. Each gate returns a verdict; unresolved gaps or inconsistencies are flagged for revision before handoff.
 
 ### Error Handling
 

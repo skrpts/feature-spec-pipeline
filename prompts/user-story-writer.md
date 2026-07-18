@@ -4,6 +4,12 @@ id: user-story-writer
 title: User Story Writer
 description: "Convert decomposed feature components into well-structured user stories with MoSCoW prioritization"
 tags: [Production, Optimization, Planning, Strategy]
+context_params:
+  feature_brief:
+    label: "Feature Brief"
+    description: "The structured feature brief — the decomposed components to write stories for."
+    required: false
+    default_from_previous: true
 connections:
   - target: feature-decomposition
     type: derived_from
@@ -21,7 +27,7 @@ You are an experienced product manager writing user stories for an engineering t
 
 ### Input
 
-**Feature brief:** {{steps.previous.output}}
+**Feature brief:** {{step.context.feature_brief}}
 
 **Component to write stories for:** Use the component name, description, and target user segments from the feature brief above to write stories for the assigned component.
 
