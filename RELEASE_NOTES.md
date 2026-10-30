@@ -1,5 +1,14 @@
 # Release Notes
 
+## v1.1.31
+GH#1100 consumer wave batch 6 — declare the data flow these steps were resolving positionally. 5 binding(s) added.
+
+`check-input-gaps` ("Inputs Provided") reports what the USER failed to supply, so binding it to any step is wrong — position would have had it audit the pipeline's own polished spec. New required input `inputs_provided`.
+
+**This flow now requires input it did not require before.** That is the fix: previously the user supplied nothing for these slots and the step silently received whatever the binding pointed at.
+
+`analyse-stakeholders` (slot "Initiative") binds Feature Decomposition rather than its positional predecessor, which emits edge cases. The feature brief is the initiative being analysed.
+
 ## v1.1.30
 GH#863 Wave 1 (#858-A1 class) — fix the intent/output mismatch (K-045). The bundle shipped `user-story-writer` and `feature-spec-assembler` prompts, and the docs said to run them, but the `execution:` block never did — so the workflow emitted polished intermediate analysis (stakeholder + risk) instead of the promised feature specification. Restored the intended bound graph: added a **User Story Writer** step and a **Feature Spec Assembler** step (each with a backing skill so they are `from_step`-addressable — `user-story-writing`, `feature-spec-assembly`), ordered `feature-decomposition → user-story-writing → acceptance-criteria-writing → edge-case-analysis → stakeholder-analysis → risk-assessment → feature-spec-assembly`, placing the assembler as the last content step before `language-polish`. Rewired every cross-step input to an **explicit `from_step` binding** via `context_params`/`{{step.context.*}}` instead of positional or mis-pointed `{{steps.<Title>.output}}` refs — user stories now feed acceptance criteria, edge cases, and the assembler; the assembler consumes the feature brief, user stories, acceptance criteria, edge cases, and risk assessment. Completed the tail: repinned `polish-language` 1.0.1→1.0.6 (the version exposing the bindable `source` slot) and bound `language-polish`'s `source` ← the assembled feature spec, so the `output_step` polishes the actual specification rather than its positional previous. Added 2 skills (skills 3→5, total 12→14). No new required inputs.
 

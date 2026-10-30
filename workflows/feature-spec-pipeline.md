@@ -53,6 +53,13 @@ composite_steps:
   - "brief-compliance-check"
   - "consistency-check"
   - "input-gap-check"
+inputs:
+  inputs_provided:
+    label: "Inputs Provided"
+    description: "What was asked for, in whatever form it arrived — the raw request the spec is written from"
+    example: "'Let users schedule reports weekly' — from a customer call, no acceptance criteria yet"
+    required: true
+    type: text
 execution:
   - skill: "feature-decomposition"
     step_type: "generation"
@@ -97,12 +104,20 @@ execution:
     output: { name: "stakeholder_analysis", type: "text" }
     context:
       org_context: "No additional organisational context"
+    bindings:
+      source:
+        from_step: "Feature Decomposition"
+        field: output
   - skill: "risk-assessment"
     prompt: "risk-assessment-prompt"
     step_type: "synthesis"
     output: { name: "risk_assessment", type: "text" }
     context:
       initiative_context: "No additional initiative context"
+    bindings:
+      source:
+        from_step: "Stakeholder Analysis"
+        field: output
   - skill: "feature-spec-assembly"
     prompt: "feature-spec-assembler"
     step_type: "synthesis"
@@ -143,6 +158,10 @@ execution:
         audience_profile: "General professional audience"
         compliance_brief: "No specific compliance requirements"
         compliance_depth: "Standard"
+      bindings:
+        source:
+          from_step: "Language Polish"
+          field: output
     - skill: "consistency-check"
       prompt: "check-consistency"
       step_type: "review"
@@ -150,10 +169,17 @@ execution:
       context:
         voice_profile: "Neutral professional tone"
         consistency_strictness: "Standard"
+      bindings:
+        source:
+          from_step: "Language Polish"
+          field: output
     - skill: "input-gap-check"
       prompt: "check-input-gaps"
       step_type: "validation"
       output: { name: "input_gaps", type: "decision" }
+      bindings:
+        source:
+          from_input: "inputs_provided"
 ---
 
 ## Feature Spec Pipeline
