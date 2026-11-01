@@ -1,5 +1,12 @@
 # Release Notes
 
+## v1.1.32
+GH#1143 — remove 4 `default_from_previous` declarations. K-073 revoked the key, and the consumer wave has since bound every slot that carried it, so the fallback can no longer fire: the declaration was inert.
+
+Measured before deleting rather than after: each of the 41 slots across the catalogue was resolved against **every** invocation, not just its carrier's own workflow, and all 41 were bound by every consumer. Nothing here changes behaviour — the fallback had no path to execution.
+
+Removed: `acceptance-criteria-prompt.user_stories`, `edge-case-finder.acceptance_criteria`, `feature-spec-assembler.risk_assessment`, `user-story-writer.feature_brief`.
+
 ## v1.1.31
 GH#1100 consumer wave batch 6 — declare the data flow these steps were resolving positionally. 5 binding(s) added.
 

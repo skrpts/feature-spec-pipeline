@@ -13,7 +13,6 @@ context_params:
     label: "User Stories"
     description: "The prioritised user stories to write acceptance criteria for."
     required: false
-    default_from_previous: true
 connections:
   - target: acceptance-criteria-writing
     type: derived_from

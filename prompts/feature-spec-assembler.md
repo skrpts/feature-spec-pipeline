@@ -25,7 +25,6 @@ context_params:
     label: "Risk Assessment"
     description: "The risk assessment for the initiative."
     required: false
-    default_from_previous: true
 connections:
   - target: feature-decomposition
     type: derived_from

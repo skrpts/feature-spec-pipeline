@@ -17,7 +17,6 @@ context_params:
     label: "Acceptance Criteria"
     description: "The acceptance criteria — the coverage baseline to extend beyond."
     required: false
-    default_from_previous: true
 connections:
   - target: edge-case-analysis
     type: derived_from

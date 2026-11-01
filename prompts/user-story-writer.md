@@ -9,7 +9,6 @@ context_params:
     label: "Feature Brief"
     description: "The structured feature brief — the decomposed components to write stories for."
     required: false
-    default_from_previous: true
 connections:
   - target: feature-decomposition
     type: derived_from

@@ -2,7 +2,7 @@ id: "57dba501-5851-47e3-9701-5c5da0079020"
 name: "feature-spec-pipeline"
 display_name: "Feature Spec Pipeline"
 description: "Generate detailed feature specifications from rough ideas, including user stories, acceptance criteria, and edge cases"
-version: "1.1.31"
+version: "1.1.32"
 engine: ">=0.1.0"
 
 author:
@@ -97,7 +97,7 @@ contents:
 
 security:
   status: "pass"
-  scanned_at: "2026-10-30T08:36:19.493Z"
+  scanned_at: "2026-11-01T19:24:39.993Z"
   scanner_version: "3.3.0"
   syntactic: "pass"
   structural: "pass"
