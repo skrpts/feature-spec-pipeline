@@ -243,3 +243,109 @@ jobs:
           else
             echo "::warning::security-report.json not found in bundle — skipping security POST"
           fi
+
+  # ─────────────────────────────────────────────────────────────────────────────
+  # GH#1157 — template member-pin check, AFTER the publish.
+  #
+  # GH#1147 put this check in `publish-skrpt`, which is where staleness is
+  # created — but the publish path is bypassable, and the audit trail that found
+  # the hole was a bypass already used:
+  #
+  #   skrpts/risk-review-process   attempt=2   push v1.1.28   completed/success
+  #
+  # `publish-skrpt` ran once, its release CI failed, the workflow was re-run, and
+  # the version became served on the second attempt with NO second script
+  # invocation. A re-run is the documented remedy for that transient, so it is the
+  # normal path, not an exotic one. A hand-pushed tag and a UI-created release are
+  # the other two doors — this workflow fires on `push: tags`, not on the script.
+  #
+  # All three routes converge HERE, which is why the check belongs here as well.
+  # And unlike a PR-time check, this runs at the moment the catalogue is being
+  # written, so the catalogue is necessarily reachable: a network failure is a real
+  # failure rather than a blip on an unrelated PR.
+  #
+  # A SEPARATE JOB, not a step in `release`. The check runs after version
+  # registration, so failing it does not un-publish anything — and the next
+  # person's remedy for a failed publish is to RE-RUN THE WORKFLOW, which is the
+  # very route that created this issue. So `release` must stay visibly green and
+  # only this job go red.
+  #
+  # Scope: the pin check and nothing else. The header's precondition covers the
+  # whole local gate (structural scan, content scan, security block), but carrying
+  # that here would rebuild a second gate that can disagree with the canonical one
+  # — the split GH#933 made deliberately. The pin check is different in kind: it is
+  # a post-publish observation rather than a gate, its violation is silent and
+  # durable, and it is cheap.
+  template-pins:
+    needs: release
+    if: always() && needs.release.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mint Hub-read token (org-bot App)
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.PIPELINE_APP_ID }}
+          private-key: ${{ secrets.PIPELINE_APP_PRIVATE_KEY }}
+          owner: skrptiq
+          repositories: skrptiq-hub
+
+      # The check compares hub's template manifests against the live catalogue, so
+      # it needs those manifests. A sparse shallow checkout rather than a handful
+      # of contents-API fetches: the set of templates is derived from the
+      # `project-template` tag in the manifests themselves, so fetching named files
+      # would need a second list of template slugs — a duplicate source of truth
+      # for something that already has one (K-049).
+      - name: Check out Hub (sparse — templates, the check, its exceptions)
+        uses: actions/checkout@v4
+        with:
+          repository: skrptiq/skrptiq-hub
+          token: ${{ steps.app-token.outputs.token }}
+          path: hub
+          ref: main
+          fetch-depth: 1
+          sparse-checkout: |
+            scripts/check-template-member-pins.mjs
+            scripts/lib/template-pins.mjs
+            packages/shared/semver.mjs
+            packages/shared/template-pin-exceptions.json
+            examples/*/skrptiq.yaml
+          sparse-checkout-cone-mode: false
+
+      # Exit 1 and exit 2 get DIFFERENT headlines, deliberately. "Could not verify"
+      # is not "a re-pin is owed", and conflating them would make the first teach
+      # people to ignore the second — which is the whole reason a CI-time check was
+      # declined before this one.
+      - name: Template member pins are current
+        env:
+          CHECK_TEMPLATE_PINS_ROOT: hub
+        run: |
+          set +e
+          node hub/scripts/check-template-member-pins.mjs
+          STATUS=$?
+          set -e
+
+          if [ "$STATUS" = "0" ]; then
+            echo "Every template member pin matches the version the catalogue serves."
+            exit 0
+          fi
+
+          echo ""
+          echo "PUBLISHED. The version is live and installable — this job does not change that."
+          echo ""
+
+          if [ "$STATUS" = "2" ]; then
+            echo "::error::COULD NOT VERIFY template member pins (exit 2) — this is NOT a report that a re-pin is owed."
+            echo "The check could not reach the catalogue, or found fewer templates than its floor."
+            echo "The publish stands. Re-running this job is safe and is the right remedy for this exit code"
+            echo "— it re-reads the catalogue and publishes nothing."
+            exit 1
+          fi
+
+          echo "::error::A TEMPLATE RE-PIN IS OWED (exit ${STATUS}) — see the slots listed above."
+          echo "An install of that template still SUCCEEDS and delivers the superseded member body,"
+          echo "so nothing else will report this."
+          echo ""
+          echo "Do NOT re-run this workflow: it republishes and reports the same thing."
+          echo "Fix forward — re-pin the template to the served version and digest, then publish the template."
+          exit 1
