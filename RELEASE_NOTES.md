@@ -1,5 +1,12 @@
 # Release Notes
 
+## v1.1.34
+GH#1334 — re-pin `check-input-gaps`→1.0.6 so the published fix for the `source` slot reaches this workflow.
+
+The prompt and its skill declared `context_params.source` differently: the skill said `supplied_by: input`, the prompt said nothing. The engine refuses a slot whose two declaration sites disagree rather than choosing between them, so the step could not run. GH#1162 fixed the prompt and published it on 2026-11-08; this package still pinned the version before that fix, which is why it reaches you only now.
+
+No behaviour change beyond the step working: nothing in this workflow produces the material the slot wants — it comes from the person running the skrpt, which is what both sites now say. Checksums resolved from the live catalogue rather than transcribed.
+
 ## v1.1.33
 GH#1144 part 1 round 2 — re-pin `input-gap-check`→1.0.4 so the newly declared `supplied_by: input` slot is in scope. A declaration against a pin that predates it is inert: until this re-pin the engine's GH#1139 shape gate could not see it. Checksums resolved from the live catalogue rather than transcribed. No behaviour change here — this step makes the existing `from_input` binding(s) enforced rather than merely correct.
 

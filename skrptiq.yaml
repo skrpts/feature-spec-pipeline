@@ -2,7 +2,7 @@ id: "57dba501-5851-47e3-9701-5c5da0079020"
 name: "feature-spec-pipeline"
 display_name: "Feature Spec Pipeline"
 description: "Generate detailed feature specifications from rough ideas, including user stories, acceptance criteria, and edge cases"
-version: "1.1.33"
+version: "1.1.34"
 engine: ">=0.1.0"
 
 author:
@@ -38,8 +38,8 @@ dependencies:
     checksum: "sha256:f8f5e6ee26ff5321e542baedb56114d4256522677296ebabba6e04eb59d06305"
   - id: "01a55f0b-66e4-4059-9695-3d6043605add"
     name: "check-input-gaps"
-    version: 1.0.5
-    checksum: "sha256:6b1a3537a2f244b44b556d47da7fe2d6a1ddd9968210aa2be85ed8171dd173eb"
+    version: 1.0.6
+    checksum: "sha256:42c39252211b7baf4ee85c4e26030b771913dc9e0f00adf3f6838753583faa8c"
   - id: "bf15c78d-4452-406e-9d54-a72b1a4797c7"
     name: "consistency-check"
     version: 1.0.3
@@ -97,7 +97,7 @@ contents:
 
 security:
   status: "pass"
-  scanned_at: "2026-11-08T15:21:10.513Z"
+  scanned_at: "2026-11-27T21:29:31.707Z"
   scanner_version: "3.3.0"
   syntactic: "pass"
   structural: "pass"
